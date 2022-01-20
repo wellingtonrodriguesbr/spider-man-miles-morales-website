@@ -1,0 +1,100 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .container-item-1 {
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    p {
+      margin: 2rem 0 4rem 0;
+    }
+
+    .logos-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 2px;
+      transform: skewX(-10deg);
+      text-transform: uppercase;
+      background-color: $red-light;
+      position: relative;
+      transition: 0.7s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        display: block;
+        width: 20%;
+        height: 60%;
+        border-top: 4px solid $white;
+        border-left: 4px solid $white;
+        border-radius: 2px;
+        opacity: 0;
+        transition: 0.7s ease;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        display: block;
+        width: 20%;
+        height: 60%;
+        border-bottom: 4px solid $white;
+        border-right: 4px solid $white;
+        border-radius: 2px;
+        opacity: 0;
+        transition: 0.7s ease;
+      }
+
+      &:hover::after,
+      &:hover::before {
+        opacity: 1;
+      }
+
+      &:hover {
+        transform: skewX(-10deg);
+        transform: scale(1.05);
+      }
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 10px 32px;
+      margin-left: 2rem;
+      border-radius: 2px;
+      transform: skewX(-10deg);
+      text-transform: uppercase;
+      border: 1px solid $red-light;
+      position: relative;
+      transition: 0.7s ease;
+
+      &:hover {
+        border-color: $white;
+      }
+    }
+  }
+
+  .container-item-2 {
+    .spider-man {
+      width: 150%;
+      transform: translate3d(-200px, 0, 0);
+    }
+  }
+}
