@@ -39,6 +39,7 @@
 ```bash
 # Clonar o repositório
 $ git clone https://github.com/wellingtonrodriguesbr/spider-man-miles-morales-website.git
+
 # Entrar no diretório
 $ cd spider-man-miles-morales-website
 ```
