@@ -6,21 +6,29 @@
   align-items: center;
   overflow: hidden;
 
+  @include responsive() {
+    flex-direction: column-reverse;
+  }
+
   .container-item-1 {
     max-width: 576px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    p {
-      margin: 2rem 0 4rem 0;
-    }
 
     .logos-image {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
+    }
+
+    @include responsive() {
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
     }
 
     .btn {
@@ -72,12 +80,14 @@
         transform: skewX(-10deg);
         transform: scale(1.05);
       }
+      @include responsive() {
+        padding: 8px 16px;
+      }
     }
 
     .btn-secondary {
       display: inline-block;
       padding: 10px 32px;
-      margin-left: 2rem;
       border-radius: 2px;
       transform: skewX(-10deg);
       text-transform: uppercase;
@@ -88,13 +98,63 @@
       &:hover {
         border-color: $white;
       }
+
+      @include responsive() {
+        padding: 8px 16px;
+      }
     }
   }
 
   .container-item-2 {
     .spider-man {
-      width: 150%;
-      transform: translate3d(-200px, 0, 0);
+      width: 120%;
+      transform: translate3d(-150px, 0, 0);
+
+      @include responsive() {
+        width: 100%;
+        transform: translate3d(0, 0, 0);
+      }
     }
   }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      101.47deg,
+      #0a0c10 26.38%,
+      rgba(10, 12, 16, 0.8) 50.07%,
+      #0a0c10 73.17%
+    );
+  }
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(225deg, $red 0%, $red-dark 100%);
 }
